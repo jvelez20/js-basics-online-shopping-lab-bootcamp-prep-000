@@ -46,7 +46,7 @@ describe("addToCart()", function() {
                      .toBeGreaterThanOrEqualTo(1);
   });
 
-  it("chooses the price at random", function() {
+  console.log("chooses the price at random", function() {
     // Note: this test has a 1-in-10,000 chance of a false negative.
     addToCart("figs");
     addToCart("grapes");
@@ -58,7 +58,7 @@ describe("addToCart()", function() {
     expect(areAnyPricesEqual).toBe(false);
   });
 
-  it("returns a message indicating that the item has been added", function() {
+  console.log("returns a message indicating that the item has been added", function() {
     expect(addToCart("ice cream")).toEqual("ice cream has been added to your cart.");
 
     expect(addToCart("juice")).toEqual("juice has been added to your cart.");
@@ -66,16 +66,16 @@ describe("addToCart()", function() {
 });
 
 describe("viewCart()", function() {
-  it("prints 'Your shopping cart is empty.' if the cart is empty", function() {
+  console.log("prints 'Your shopping cart is empty.' if the cart is empty", function() {
     expect(viewCart()).toEqual("Your shopping cart is empty.")
   });
 
-  it("correctly prints a one-item cart", function() {
+  console.log("correctly prints a one-item cart", function() {
     addToCart("lemons");
     expect(viewCart()).toEqual(`In your cart, you have ${getCart()[0].itemName} at $${getCart()[0].itemPrice}.`);
   });
 
-  it("correctly prints a two-item cart", function() {
+  console.log("correctly prints a two-item cart", function() {
     addToCart("mango");
     addToCart("nuts");
 
@@ -84,7 +84,7 @@ describe("viewCart()", function() {
     );
   });
 
-  it("correctly prints a three-or-more-item cart", function() {
+  console.log("correctly prints a three-or-more-item cart", function() {
     addToCart("orange");
     addToCart("pear");
     addToCart("quince");
