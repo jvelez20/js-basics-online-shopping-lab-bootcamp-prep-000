@@ -98,7 +98,7 @@ describe("viewCart()", function() {
 });
 
 describe("total()", function() {
-  it("adds up the price of all items in the cart", function() {
+  console.log("adds up the price of all items in the cart", function() {
     addToCart("sorghum");
     addToCart("tarragon");
 
@@ -120,7 +120,7 @@ describe("total()", function() {
 });
 
 describe("removeFromCart()", function() {
-  it("removes the specified item from the cart", function() {
+  console.log("removes the specified item from the cart", function() {
     addToCart("vanilla");
     addToCart("watermelon");
     addToCart("yams");
@@ -138,19 +138,19 @@ describe("removeFromCart()", function() {
     expect(getCart().length).toEqual(1);
   });
 
-  it("alerts you if you're trying to remove an item that isn't in your cart", function() {
+  console.log("alerts you if you're trying to remove an item that isn't in your cart", function() {
     // Repeat item name from previous test to prevent hard-coding.
     expect(removeFromCart("yams")).toEqual("That item is not in your cart.");
   });
 });
 
 describe("placeOrder()", function() {
-  it("doesn't place the order if a credit card number is not provided", function() {
+  console.log("doesn't place the order if a credit card number is not provided", function() {
     
     expect(placeOrder()).toEqual("Sorry, we don't have a credit card on file for you.");
   });
 
-  it("places an order when a credit card number is provided", function() {
+  console.log("places an order when a credit card number is provided", function() {
     addToCart("zucchini");
 
     const cartTotal = total();
@@ -161,7 +161,7 @@ describe("placeOrder()", function() {
     expect(placeOrder(cardNumber)).toEqual(`Your total cost is $${cartTotal}, which will be charged to the card ${cardNumber}.`);
   });
 
-  it("empties the cart", function() {
+  console.log("empties the cart", function() {
     addToCart("apples");
 
     placeOrder(12345678);
