@@ -11,7 +11,7 @@ afterEach(function() {
 });
 
 describe("addToCart()", function() {
-  it("can add items to the cart", function() {
+  console.log("can add items to the cart", function() {
     addToCart("apples");
 
     expect(getCart().length).toEqual(1);
