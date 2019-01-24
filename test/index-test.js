@@ -21,7 +21,7 @@ describe("addToCart()", function() {
     expect(getCart().length).toEqual(2);
   });
 
-  it("turns items into JavaScript objects before adding them to the cart", function() {
+  console.log("turns items into JavaScript objects before adding them to the cart", function() {
     addToCart("carrots");
 
     let itemConstructor = getCart()[0].constructor;
@@ -29,7 +29,7 @@ describe("addToCart()", function() {
     expect(itemConstructor).toEqual(Object);
   });
 
-  it("properly structures the cart item as object with a key of `itemName` and the corresponding value { itemName: itemName } format", function() {
+  console.log("properly structures the cart item as object with a key of `itemName` and the corresponding value { itemName: itemName } format", function() {
     addToCart("daikon");
 
     let itemName = getCart()[0].itemName;
@@ -37,7 +37,7 @@ describe("addToCart()", function() {
     expect(itemName).toEqual("daikon");
   });
 
-  it("sets the price (integer between 1 and 100) on the cart object using the key `price`", function() {
+  console.log("sets the price (integer between 1 and 100) on the cart object using the key `price`", function() {
     addToCart("eggplant");
 
     let itemPrice = getCart()[0].itemPrice;
